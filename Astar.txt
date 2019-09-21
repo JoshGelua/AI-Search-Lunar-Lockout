@@ -1,0 +1,15 @@
+1)
+To guarantee that A* will produce the optimal solution, we cannot have
+a heuristic that overestimates cost to the goal. This is due to the rule of
+admissible heuristics. Since we know that the range is
+in between 20% under and 20% over, we can underestimate the heuristic again by
+that 20%, so that at most, it will estimate at the exact cost of the goal,
+and otherwise, it will underestimate the goal, which according to A* will
+still produce a guaranteed optimal solution (just not the fastest).
+
+2)
+False. This is because each xanadu may also act as a piece to help another xanadu
+to reach the escape hatch. It may occur that one xanadu has to move away from the
+center, in order for another xanadu to get into escape hatch. In this way, it is
+not admissible. If an algorithm has increasing heuristic values to get to a
+solution, then this by definition is not admissible.
